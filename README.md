@@ -1,4 +1,3 @@
-(PHASE 1 PROJECT)
 
 Date, 15/03/2025
 
@@ -30,7 +29,7 @@ Technologies used
  Bootstrap
 
 Support and contact details
-github.com/ednakiruai7
+github.com/vikakamau
 
 License
 The content of this site is licensed under the MIT license Copyright (c) 2018.
