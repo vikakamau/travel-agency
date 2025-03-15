@@ -31,8 +31,8 @@ ul{
 header{
     width: 100vw;
     height: 100vh;
-    background-color: lightslategray;
-    /* background-image: url(/img/beach\ view.jpg); */
+    /* background-color: lightslategray; */
+    background-image: url('https://i.pinimg.com/736x/a0/74/67/a07467a9c9a8b934079fffd5169162cb.jpg');
     background-position: bottom;
     background-size: cover;
     display: flex;
@@ -148,6 +148,24 @@ h3{
     margin-top: 5%;
     display: flex;
     justify-content: space-between;
+}
+
+.destination-image,
+.accommodation-image,
+.tours-image{
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+    .destination-image,
+    .accommodation-image,
+    .tours-image{
+        height: 150px;
+    }
 }
 
  

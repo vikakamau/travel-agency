@@ -1,85 +1,77 @@
-let tours = "https://project-2w2z.onrender.com/accommodation"
-document.addEventListener('DOMContentLoaded', async(event) =>{
-    const tours = await description()
-})
-
-
-function description(){
-
- let ul = document.querySelector("#list");
-  fetch("https://project-2w2z.onrender.com/accommodation", {
-    method: "GET",
-    headers: {
-        "Content-Type": "application/json",
-        "Accept": "application/json"
-    }
-  })
- .then(res => res.json())
- .then(loc => loc.forEach(list => {
-    // console.log(list)
-    document.querySelectorAll(".image-container").forEach((container, index) => {
-        const list = loc[index];
-        const descriptionHTML = `
-        <ul>
-            <li>Name: ${list.name}</li>
-            <li>Location: ${list.location}</li>
-            <li>Type: ${list.type}</li>
-            <li>Price: ${list.price_per_night}</li>
-            <li>Rating: ${list.rating}</li>
-        </ul> `;
-    container.querySelector(".description").innerHTML = descriptionHTML;
-            });
-        }))
- }
-
- 
-
-document.querySelectorAll("#acc").forEach(acc => {
-    acc.addEventListener("mouseover", event => {
-        event.target.style.backgroundColor = "rgba(226,0,0,0.7)";
-    });
-
-    acc.addEventListener("mouseout", event => {
-        event.target.style.backgroundColor = "transparent";
-    });
+document.addEventListener('DOMContentLoaded', async (event) => {
+  await fetchDestinations();
+  await fetchAccommodation();
+  await fetchTours();
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    const tourItemsContainer = document.getElementById('tourItems');
-  
-    // Function to display tour details
-    function showTourDetails(tour) {
-      alert(`
-        Name: ${tour.name}
-        Location: ${tour.location}
-        Description: ${tour.description}
-        Activities: ${tour.activities.join(', ')}
-      `);
-    }
-  
-    // Fetch tour details from the URL
-    fetch('https://project-2w2z.onrender.com/destination')
-      .then(response => response.json())
-      .then(data => {
-        data.forEach(tour => {
-          const tourItem = document.createElement('div');
-          tourItem.classList.add('tours-col');
-          tourItem.innerHTML = `
-            <h3>${tour.name}</h3>
-            <p><strong>Location:</strong> ${tour.location}</p>
-            <button class="tour-button" data-tour-id="${tour.id}">More Details</button>
-          `;
-          tourItemsContainer.appendChild(tourItem);
-        });
-  
-        document.querySelectorAll('.tour-button').forEach(button => {
-          button.addEventListener('click', function() {
-            const tourId = button.dataset.tourId;
-            const tour = data.find(tour => tour.id === tourId);
-            showTourDetails(tour);
-          });
-        });
-      })
-  });
-  
+async function fetchDestinations() {
+  const response = await fetch('https://tour-f1wg.onrender.com/destination');
+  const data = await response.json();
+  const destinationItemsContainer = document.getElementById('destinationItems');
 
+  if (Array.isArray(data)) {
+    data.forEach(destination => {
+      const destinationItem = document.createElement('div');
+      destinationItem.classList.add('tours-col');
+      destinationItem.innerHTML = `
+      <img src="${destination.image}" alt="${destination.name}" class="destination-image">
+        <h3>${destination.name}</h3>
+        <p><strong>Location:</strong> ${destination.location}</p>
+        <p><strong>Description:</strong> ${destination.description}</p>
+        <p><strong>Activities:</strong> ${destination.activities.join(', ')}</p>
+      `;
+      destinationItemsContainer.appendChild(destinationItem);
+    });
+  } else {
+    console.error('Invalid data structure:', data);
+  }
+}
+async function fetchAccommodation() {
+  const response = await fetch('https://tour-f1wg.onrender.com/accommodation');
+  const data = await response.json();
+  console.log(data); 
+  const accommodationItemsContainer = document.getElementById('accommodationItems');
+
+if (Array.isArray(data)){
+  data.forEach(accommodation => {
+      const accommodationItem = document.createElement('div');
+      accommodationItem.classList.add('tours-col');
+      accommodationItem.innerHTML = `
+      <img src="${accommodation.image}" alt="${accommodation.name}" class="accommodation-image">
+        <h3>${accommodation.name}</h3>
+        <p><strong>Location:</strong> ${accommodation.location}</p>
+        <p><strong>Price per night:</strong> ${accommodation.price_per_night}</p>
+        <p><strong>Rating:</strong> ${accommodation.rating}</p>
+      `;
+      accommodationItemsContainer.appendChild(accommodationItem);
+    });
+  } else {
+    console.error('Invalid data structure:', data);
+  }
+}
+
+async function fetchTours() {
+  const response = await fetch('https://tour-f1wg.onrender.com/tours');
+  const data = await response.json();
+  console.log(data); 
+  const toursItemsContainer = document.getElementById('toursItems');
+
+if (Array.isArray(data)){
+  data.forEach(tour => {
+      const tourItem = document.createElement('div');
+      tourItem.classList.add('tours-col');
+      tourItem.innerHTML = `
+      <img src="${tour.image}" alt="${tour.name}" class="tour-image">
+        <h3>${tour.name}</h3>
+        <p><strong>Duration:</strong> ${tour.duration}</p>
+        <p><strong>Destination:</strong> ${tour.destination.join(', ')}</p>
+        <p><strong>Accommodation:</strong> ${tour.accommodation}</p>
+        <p><strong>Price:</strong> ${tour.price}</p>
+        <p><strong>Description:</strong> ${tour.description}</p>
+      `;
+      toursItemsContainer.appendChild(tourItem);
+    });
+  } else {
+    console.error('Invalid data structure:', data);
+  }
+}
