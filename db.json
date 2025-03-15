@@ -1,0 +1,86 @@
+{"destination":[
+  { "id": "1",
+  "image": "https://i.pinimg.com/736x/ec/c5/48/ecc548d085be9cd60e60984aef38d6f8.jpg",
+   "name": "Maasai Mara National Reserve",
+    "location":"Narok County",
+    "description":"Famous for its exceptional population of lions,leopards and cheetahs.Offers breathtaking views of the savannah.",
+    "activities":["Safari","Hot air balloon","Cultural tours"]
+},
+{
+ "id": "2",
+ "image": "https://i.pinimg.com/736x/bf/46/1e/bf461e22a944a4a7b8b15014c18f9f2d.jpg",
+ "name": "Diani Beach",
+    "location":"Mombasa County",
+    "description":"Known for its white sandy beaches and crystal-clear waters.Ideal for relaxation and water sports activities.",
+    "activities":["Snorkeling","Scuba diving","Windsurfing"]
+},
+{
+ "id": "3",
+ "image": "https://i.pinimg.com/736x/44/09/e7/4409e72dd0c8ee998acc5c9499c385a8.jpg",
+ "name": "Mount Kenya",
+    "location":"Central Province",
+    "description":"Africa's second-highest peak,offering trekking and climbing opportunities.Home to diverse wildlife and flora.",
+    "activities":["Hiking","Mountain climbing","Wildlife viewing"]
+}
+],
+"accommodation":[
+  {
+   "id": "4",
+   "image": "https://i.pinimg.com/736x/b2/3a/e2/b23ae26b0ca77cee9c91b761635132e9.jpg",
+   "name": "Sarova Mara Game Camp",
+   "location":"Maasai Mara National Reserve",
+   "type": "Luxury tented camp",
+   "price_per_night": "$45",
+   "rating": 4.5
+  },
+  {
+   "id": "5",
+   "image":"https://i.pinimg.com/736x/1c/0c/6d/1c0c6d937843c47da0cc438056c679c8.jpg",
+   "name": "Diani Reef Beach Resort & Spa",
+   "location":"Diani Beach",
+   "type": "Resort",
+   "price_per_night": "$50",
+   "rating": 4.0
+  },
+  {
+   "id": "6",
+   "image":"https://i.pinimg.com/736x/a9/79/16/a979160aac122bc2c88f31d5af8966fc.jpg",
+   "name": "Serena Mountain Lodge",
+   "location":"Mount Kenya",
+   "type": "Lodge",
+   "price_per_night": "$60",
+   "rating": 4.3
+  }
+],
+"tours":[
+ {
+   "id": "7",
+   "image": "https://i.pinimg.com/736x/c5/80/f3/c580f307db951b9edd69f44dceac1190.jpg",
+   "name":"Maasai Mara Safari",
+   "duration": "3 days",
+   "destination": ["Maasai Mara National Reserve"],
+   "accommodation": "Sarova Mara Game Camp",
+   "price": "$90",
+   "description": "Experience the wonders of Maasai Mara with daily game drives and cultural tours.Witness the Big Five and experience the rich Maasai culture."
+ },
+ {
+   "id": "8",
+   "image": "https://i.pinimg.com/736x/49/8d/d5/498dd504026f7bf0f3e0460ff0d3b447.jpg",
+   "name":"Diani Beach Getaway",
+   "duration": "5 days",
+   "destination": ["Diani Beach"],
+   "accommodation": "Diani Reef Beach Resort & Spa",
+   "price": "$100",
+   "description": "Indulge in ultimate relaxation at the beautiful Diani Beach.Enjoy water sports,sunbathing and spa treatments."
+ },
+ {
+   "id": "9",
+   "image": "https://i.pinimg.com/736x/de/28/a2/de28a23f9fc6e48864adca6ec8da150f.jpg",
+   "name":"Summit Expendition",
+   "duration": "7 days",
+   "destination": ["Mount Kenya"],
+   "accommodation": "Serena Mountain Lodge",
+   "price": "$65",
+   "description": "Embark on a challenging trek to the summit of Mount Kenya with experienced guides.Experience breathtaking views and diverse wildlife."
+ }
+]}
