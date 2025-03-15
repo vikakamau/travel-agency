@@ -1,8 +1,8 @@
 (PHASE 1 PROJECT)
 
-Date, 11/04/2024
+Date, 15/03/2025
 
-By Edna Kiruai
+By Victor Kamau
 
 Description
 
@@ -18,7 +18,7 @@ Installation Requirements
 Git
 
 Installation instruction
-Git clone https://github.com/ednakiruai/TravelAgency
+Git clone https://github.com/vikakamau/travel-agency
 
 Live Link
 [Git](gh-pages link)
